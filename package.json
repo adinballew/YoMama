@@ -4,6 +4,10 @@
   "version": "1.0.0",
   "scripts": {
     "start": "expo start",
+    "android:dev": "expo start --android --dev-client",
+    "ios:dev": "expo start --ios --dev-client",
+    "web:dev": "expo start --web --dev-client",
+    "build": "eas buuld:dev --profile development-simulator",
     "reset-project": "node ./scripts/reset-project.js",
     "android": "expo start --android",
     "ios": "expo start --ios",
@@ -11,23 +15,30 @@
     "lint": "expo lint"
   },
   "dependencies": {
+    "@expo/knex-expo-sqlite-dialect": "^0.1.0",
     "@expo/vector-icons": "^14.1.0",
     "@react-navigation/bottom-tabs": "^7.3.10",
     "@react-navigation/elements": "^2.3.8",
     "@react-navigation/native": "^7.1.6",
+    "babel-plugin-inline-import": "^3.0.0",
     "expo": "~53.0.12",
     "expo-blur": "~14.1.5",
     "expo-constants": "~17.1.6",
+    "expo-contacts": "~14.2.5",
+    "expo-dev-client": "~5.2.1",
     "expo-font": "~13.3.1",
     "expo-haptics": "~14.1.4",
     "expo-image": "~2.3.0",
     "expo-linking": "~7.1.5",
     "expo-router": "~5.1.0",
+    "expo-sms": "~13.1.4",
     "expo-splash-screen": "~0.30.9",
+    "expo-sqlite": "~15.2.12",
     "expo-status-bar": "~2.2.3",
     "expo-symbols": "~0.4.5",
     "expo-system-ui": "~5.0.9",
     "expo-web-browser": "~14.2.0",
+    "knex": "^3.1.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-native": "0.79.4",
@@ -40,10 +51,24 @@
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
+    "@eslint/js": "^9.29.0",
     "@types/react": "~19.0.10",
-    "typescript": "~5.8.3",
+    "@typescript-eslint/eslint-plugin": "^8.35.0",
+    "@typescript-eslint/parser": "^8.35.0",
+    "drizzle-kit": "^0.31.2",
     "eslint": "^9.25.0",
-    "eslint-config-expo": "~9.2.0"
+    "eslint-config-expo": "~9.2.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-react": "^7.37.5",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.35.0"
+  },
+  "expo": {
+    "doctor": {
+      "reactNativeDirectoryCheck": {
+        "listUnknownPackages": false
+      }
+    }
   },
   "private": true
 }
